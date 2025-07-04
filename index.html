@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Inteligência Financeira v4.2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <img src="images/logo.png" alt="Logo da Empresa" style="height: 50px;">
+        <button id="reset-view-button" class="hidden">Mostrar Visão Geral</button>
+        <div class="info-header">
+            <span>Dados Atualizados Até:</span>
+            <span id="last-update">Carregando...</span>
+        </div>
+    </header>
+
+    <main id="main-container">
+        <section class="info-gerais" id="info-departamentos">
+            <!-- Os 5 principais departamentos serão inseridos aqui -->
+        </section>
+
+        <section class="detalhes" id="details-section">
+            <div class="card total-geral" id="total-geral-card">
+                <h3 id="total-geral-title">Total Geral Depto.</h3>
+                <p id="total-geral-valor">R$ 0,00</p>
+                <!-- Espaço para o nosso novo gráfico de pizza -->
+                <div class="chart-container">
+                    <canvas id="pizzaChart"></canvas>
+                </div>
+            </div>
+            <div class="card detalhe-natureza">
+                <h3 id="natureza-title">Gastos por Natureza (Geral)</h3>
+                <ul id="lista-natureza">
+                    <!-- A lista de gastos será inserida aqui -->
+                </ul>
+            </div>
+        </section>
+
+        <section class="card avisos">
+            <h3>Lançamentos Sem Departamento Associado</h3>
+            <ul id="lista-sem-departamento">
+                <!-- Os lançamentos com problemas serão listados aqui -->
+            </ul>
+        </section>
+    </main>
+
+    <!-- Bibliotecas Externas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+    <!-- NOVO: Biblioteca para criar gráficos -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Nosso script principal -->
+    <script src="script.js?v=4.2"></script>
+</body>
+</html>
