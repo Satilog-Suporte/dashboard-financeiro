@@ -204,7 +204,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    const csvFilePath = 'data/BRUDAM (2).csv';
+    const repoName = window.location.pathname.split('/')[1];
+    const csvFilePath = `/${repoName}/data/BRUDAM (2).csv`;
 
     Papa.parse(csvFilePath, {
         download: true,
